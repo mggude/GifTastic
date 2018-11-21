@@ -7,10 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GifTastic!</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/cyborg/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4DAPMwiyOJv/C/LvTiUsW5ueiD7EsaAhwUKO0Llp+fWzT40XrmAbayhVP00bAJVa" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Proza+Libre" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
+
 </head>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Grace's Favorite Things Gif Generator!</h1>
+            <hr>
+
+            <div data-name="name" id="buttons-view"></div>
+
+            <form id="gif-form">
+                <label for="gif-input">Add a gif! Make it a good one! </label>
+                <input type="text" id="gif-input">
+                <br>
+                <input id="add-gif" type="submit" value="Add a gif!" class="btn btn-info">
+            </form>
+
+            <div class="row" id="gif-view"></div>
+
+        </div>
+    </div>
+</div>
 
 <body>
 
