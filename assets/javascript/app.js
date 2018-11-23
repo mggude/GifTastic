@@ -1,5 +1,4 @@
-var topics = ["animals", "cats", "dogs", "Tarantino", "Harry Potter", "space", "Obama", "Spongebob", "Colorado", "Disney", "pizza", "yoga", "Halloween", "Christmas", "coding", "chocolate", "Buddha", "Switzerland", "snowboarding"];
-
+var topics = ["animals", "cats", "dogs", "Tarantino", "Harry Potter", "space", "Obama", "Spongebob", "Colorado", "Disney", "pizza", "tacos", "yoga", "Halloween", "Christmas", "coding", "chocolate", "Buddha", "Switzerland", "snowboarding"];
 
 var checkGifState = function () {
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
@@ -14,7 +13,6 @@ var checkGifState = function () {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
     }
-
 }
 
 var generateGifImages = function (results) {
@@ -30,20 +28,26 @@ var generateGifImages = function (results) {
 
         // Creating and storing an image tag
         var gifImage = $("<img>");
+
         // Setting the src attribute of the image to a property pulled off the result item
         var stillImage = results[i].images.fixed_width_still.url;
         var animatedImage = results[i].images.fixed_width.url;
 
+        // Setting still and animated data-states
         gifImage.attr("src", stillImage);
         gifImage.attr("data-animate", animatedImage);
         gifImage.attr("data-still", stillImage);
         gifImage.attr("data-state", "still");
 
+        // adding class to access gifImages
         gifImage.addClass("gif");
 
         // Appending the paragraph and image tag to the gifDiv
-        gifDiv.append(gifImage,rating);
+        gifDiv.append(gifImage, rating);
+
+        // adding class for bootstrap styling
         gifDiv.addClass("col-md-3");
+
         // Prependng the gifDiv to the HTML page in the "#gif-view" div
         $("#gif-view").prepend(gifDiv);
     }
@@ -82,9 +86,9 @@ function renderButtons() {
     for (var i = 0; i < topics.length; i++) {
 
         // Then dynamicaly generating buttons for each topic in the array
-        // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+        // This code $("<button>") is all jQuery needs to create the beginning and end tag.
         var a = $("<button>");
-        // Adding a class of gif-btn to our button
+        // Adding a class of gif-btn, btn, and btn-info (click event listener, bootstrap) to our button
         a.addClass("gif-btn btn btn-info");
         // Adding a data-attribute
         a.attr("data-name", topics[i]);
